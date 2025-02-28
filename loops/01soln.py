@@ -5,3 +5,4 @@ for num in number:
     if num > 0:
        positveNumCount +=1 
 print(f"The final count {positveNumCount} is positive")
+
