@@ -1,3 +1,5 @@
+import math
+
 # def my_function():
 #     print("Hello from a function")
 # my_function()
@@ -98,3 +100,51 @@ def my_function(a, b, /, *, c, d):
   print(a + b + c + d)
 
 my_function(5, 6, c = 7, d = 8)
+
+
+# 
+
+def square(value):
+  print(value*2)
+  return   value*2
+
+
+value = 3
+result =square(value)
+print(result)
+
+
+
+
+def add(value,value1):
+  num = value + int(value1)
+  return   num
+
+result =add(8,'8')
+print(result)
+
+# /polymorphisim
+
+def multiply (p,p1):
+  return p*p1
+
+
+print(multiply(8,6))
+print(multiply('p',6))
+print(multiply(2,'y'))
+
+
+
+def circumference(r):
+  return math.pi *r**2
+
+print(circumference(3))
+print(round(circumference(3), 2))
+
+
+
+def greet(value="Namaste"):
+  print(value)
+  return "Hello" + value 
+
+greet()  
