@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    background-color: rgb(107, 107, 114);
+    color: white;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    gap: 2rem;
+    background-color: rgb(223, 122, 50);
+    flex-direction: column;
+    padding: 20px;
+
+    border-radius: 3px solid white;
+    max-width: 600px;
+}
+
+
+.circle{
+    
+}

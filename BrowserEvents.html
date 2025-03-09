@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert Adjacent Element After End</title>
+</head>
+<body>
+
+<div id="container">
+  <div id="existingElement">Existing Element</div>
+</div>
+
+<script>
+  // Create a new element
+  var newElement = document.createElement("div");
+  newElement.textContent = "Welcome to CodeHelp";
+
+  // Get the reference to the existing element
+  var existingElement = document.getElementById("existingElement");
+
+  // Insert the new element after the end of the existing element
+  existingElement.insertAdjacentElement('afterend', newElement);
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Event Listener Example</title>
+</head>
+<body>
+
+    <!-- <input type="text" id="myInput" placeholder="Type something..."> -->
+
+    <button id="myButton">Click me</button>
+
+    
+
+    <script>
+
+    //   const input = document.getElementById("myInput")
+    //   input.addEventListener('input',function(event){
+
+    //     console.log(event.target.value)
+    //   })
+
+        // Get the button element
+        var button = document.getElementById("myButton");
+
+
+
+        // Function to handle button click
+        function handleButtonClick() {
+            button.style.backgroundColor = "orange";
+            button.style.color = "white";
+
+            button.style.border = "orange";
+
+            console.log("Button CLicked");
+
+            // alert("Event listener add!");
+
+        }
+
+        // Add event listener to the button
+        button.addEventListener("click", handleButtonClick);
+
+        // Remove event listener after 5 seconds
+        setTimeout(function() {
+            button.removeEventListener("click", handleButtonClick);
+            // alert("Event listener removed!");
+            
+        }, 5000);
+    </script>
+</body>
+</html>
