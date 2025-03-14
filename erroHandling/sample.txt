@@ -1,0 +1,1 @@
+file system in python =1 text file  = human can read2. binary file  = non readable file =  mp3  vidoe
