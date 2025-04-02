@@ -98,3 +98,9 @@ def register():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+#flask_mysqldb: Imports the module for connecting to MySQL databases from Flask.
+#MySQLdb.cursors: Imports the cursor class for interacting with the MySQL database.
+#re: Imports the regular expression module for email and username validation.
+#app = Flask(__name__): Creates a Flask application instance.
+#mysql = MySQL(app): Initializes the MySQL extension, linking it to the Flask app.
