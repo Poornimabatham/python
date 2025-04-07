@@ -1,0 +1,97 @@
+/* src/styles/tailwind-custom.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-gradient-custom {
+  @apply text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center;
+  /* Apply other Tailwind button styles */
+  background-image: linear-gradient(to right, rgb(238, 119, 36), rgb(216, 54, 58), rgb(221, 54, 117), rgb(180, 69, 147));
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100vw;
+}
+
+.main-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: orange;
+  padding: 1rem;
+  color: white;
+}
+
+.side-feature {
+  grid-column: span 2;
+  background: purple;
+  padding: 1rem;
+  color: white;
+}
+
+
+.header {
+  /* background: crimson; */
+  padding: 1rem;
+  text-align: center;
+  /* color: white; */
+  grid-column: span 4;
+  /* grid-row: 1; */
+  border-radius: 2px solid white;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+  height: 60vh;
+  /* Full height of screen */
+  background-color: #f0f0f0;
+}
+
+.article {
+  background-color: white;
+  padding: 1px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  text-align: center;
+
+  /* 👇 Only horizontal margin, or reduce vertical spacing */
+  /* margin: 5px 10px; */
+}
+
+.article-img { margin: auto;
+  padding: 20px;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.article-text{
+  padding: 20px;
+  flex: 1;
+}
+
+.article-text h4{
+  margin:  0 0 10px;
+  font-size: 18px;
+}
+.article-text p{
+  margin:  0;
+  color:  #555;
+}
+
+
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
