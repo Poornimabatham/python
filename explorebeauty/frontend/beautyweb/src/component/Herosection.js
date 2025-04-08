@@ -13,10 +13,10 @@ const Herosection = () => {
           and get referred to job positions very few know about.
         </p>
         <div className="flex gap -4">
-          <button className="bg-white text-pink-900  mx-3 px-6 py-3 rounded-full font-semibold">
+          <button className="bg-white text-pink-900   my-8 mx-3 px-6 py-3 rounded-full font-semibold">
             Find jobs
           </button>
-          <button className="border-2 border-white px-6 py-3 rounded-full text-white hover:bg-white hover:text-pink-500 transition duration-300 font-semibold">
+          <button className="border-2 border-white my-8 mx-3 px-6 py-3  rounded-full text-white hover:bg-white hover:text-pink-500 transition duration-300 font-semibold">
             Hire talent
           </button>
         </div>

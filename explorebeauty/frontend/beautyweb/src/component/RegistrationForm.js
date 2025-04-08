@@ -1,5 +1,4 @@
 import React from 'react';
-import './RegistrationForm.css'; // Import the CSS file
 
 const RegistrationForm = () => {
   return (

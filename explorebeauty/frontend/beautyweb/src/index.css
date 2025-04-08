@@ -99,8 +99,8 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Creates three equal columns */
   padding: 20px;
-  background-color: #f0f0f0; /* Example background color */
-  color: #333; /* Example text color */
+  background-color: #e08bea; /* Example background color */
+  color: white; /* Example text color */
 }
 
 .footer-column {
@@ -127,7 +127,9 @@ footer {
   justify-content: center; /* Centers horizontally */
   align-items: center;    /* Centers vertically */
   min-height: 100vh;      /* Makes the container take up at least the full viewport height */
-  background-color: #f4f4f4; /* Optional background for the page */
+  /* background-color: #f4f4f4; Optional background for the page */
+  width: 100%;
+  margin: auto;
 }
 
 form {
@@ -180,3 +182,19 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
+.box-container{
+  display: grid;
+    /* justify-content: center; */
+    grid-template-columns: 2fr 2fr;
+    gap: 90px;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    /* min-height: 10vh; */
+    /* Makes the container take up at least the full viewport height */
+    /* background-color: #f4f4f4; Optional background for the page */
+    width: 100%;
+    margin: 12px 33px;
+}
+
+
