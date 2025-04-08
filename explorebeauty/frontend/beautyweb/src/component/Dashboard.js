@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GlobalComponent from "./GlobalComponent";
 import Form from "./Form";
 import { NavLink, useNavigate } from "react-router-dom";
+import RegistrationForm from "./RegistrationForm";
 
 const Dashboard = () => {
   const navigate = useNavigate(); // Use useNavigate hook
@@ -101,6 +102,7 @@ const Dashboard = () => {
         <GlobalComponent />
       </div>
 
+    <div><RegistrationForm/></div>
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
@@ -114,6 +116,8 @@ const Dashboard = () => {
           </div>
         </div>
       )}
+
+      
     </>
   );
 };

@@ -119,3 +119,19 @@ footer {
 .footer-column ul li {
   margin-bottom: 5px;
 }
+
+.Formcontainer {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;    /* Centers vertically */
+  min-height: 100vh;      /* Makes the container take up at least the full viewport height */
+  background-color: #f4f4f4; /* Optional background for the page */
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  width: 400px; /* Adjust as needed */
+}
