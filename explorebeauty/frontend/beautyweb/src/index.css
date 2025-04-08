@@ -95,3 +95,27 @@
   display: flex;
   gap: 10px;
 }
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Creates three equal columns */
+  padding: 20px;
+  background-color: #f0f0f0; /* Example background color */
+  color: #333; /* Example text color */
+}
+
+.footer-column {
+  padding: 10px;
+}
+
+.footer-column h3 {
+  margin-top: 0;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
