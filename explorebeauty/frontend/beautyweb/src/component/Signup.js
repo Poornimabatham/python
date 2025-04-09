@@ -1,40 +1,61 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate
+import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Signup = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
-    password: "", // Added password to state
+    password: "",
     repeatpassword: "",
   });
   const [passwordMatchError, setPasswordMatchError] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [passwordStrengthError, setPasswordStrengthError] = useState("");
+  const navigate = useNavigate();
 
-  // Handle input change
   const handleChange = (event) => {
     const { name, value } = event.target;
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
+    // Clear password strength error when the user types
+    if (name === 'password') {
+      setPasswordStrengthError("");
+    }
   };
 
-  // Handle form submission
+  const checkPasswordStrength = (password) => {
+    const hasMinLength = password.length >= 6;
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasDigit = /[0-9]/.test(password);
+
+    return hasMinLength && hasSpecialChar && (hasUpperCase || hasLowerCase) && hasDigit;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPasswordMatchError(""); // Clear any previous password match error
+    setPasswordMatchError("");
+    setPasswordStrengthError("");
 
     if (values.password !== values.repeatpassword) {
       setPasswordMatchError("Passwords do not match");
       return;
     }
 
-    console.log("Submitting:", values); // Debugging
+    if (!checkPasswordStrength(values.password)) {
+      setPasswordStrengthError(
+        "Password must be at least 6 characters long and contain at least one special character, one uppercase or lowercase letter, and one digit."
+      );
+      return;
+    }
+
+    console.log("Submitting:", values);
     axios
       .post("http://localhost:3000/api/v1/signup", {
-        name: values.name, // Send name in the request
+        name: values.name,
         email: values.email,
         password: values.password,
         repeatpassword: values.repeatpassword,
@@ -42,28 +63,28 @@ const Signup = () => {
       .then((res) => {
         if (res.status === 200) {
           alert("Signup successful!");
-          navigate("/"); // Use navigate function for redirection
+          navigate("/");
           console.log("signup successful, response data:", res.data);
-        } // Reset the form values after successful submission
+        } else if (res.status === 400) {
+          alert("Email id already exist!");
+        } else {
+          console.log("Signup Unsuccessful!");
+        }
         setValues({
           name: "",
           email: "",
           password: "",
           repeatpassword: "",
         });
-        // Optionally, redirect the user after successful signup
-        navigate("/"); // Assuming you have a /login route
-        // Optionally, show a success message to the user
+        navigate("/");
       })
       .catch((error) => {
         console.error("Signup error:", error);
-        // Handle errors here, e.g., display an error message to the user
         if (
           error.response &&
           error.response.data &&
           error.response.data.message
         ) {
-          // You can set an error message state and display it
           console.log("Signup failed:", error.response.data.message);
         } else {
           console.log("Signup failed due to a network error or other issue.");
@@ -73,12 +94,10 @@ const Signup = () => {
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      {/* Parent container */}
       <form
         className="max-w-sm mx-auto bg-white p-8 rounded-md shadow-md"
-        onSubmit={handleSubmit} // Changed onClick to onSubmit
+        onSubmit={handleSubmit}
       >
-        {/* Form */}
         <div className="mb-5">
           <label
             htmlFor="name"
@@ -130,6 +149,10 @@ const Signup = () => {
             value={values.password}
             onChange={handleChange}
           />
+          {console.log(passwordStrengthError)}
+          { passwordStrengthError && (
+            <p className="text-red-500 text-sm">{passwordStrengthError}</p>
+          )}
         </div>
         <div className="mb-5">
           <label
